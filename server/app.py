@@ -17,12 +17,12 @@ CORS(app)  # Handle CORS for frontend integration
 
 currentRequestId = ""
 
-mpx_host = "https://api.genai.masterpiecex.com"
-get_status_url = mpx_host + "/genai/beta/status/"
+mpx_host = "https://api.genai.masterpiecex.com/v1"
+get_status_url = mpx_host + "/status/"
 generate_dir = {
-    "Object": "/genai/beta/functions/object",
-    "Animal": "/genai/beta/functions/animal",
-    "Human": "/genai/beta/functions/human",
+    "Object": "/functions/object",
+    "Animal": "/functions/animal",
+    "Human": "/functions/human",
 }
 
 
@@ -37,19 +37,17 @@ def submit():
         "paintPromptNeg": "blurry, low quality, low res",
         "meshVariability": 2,
         "isCreative": False,
-        "appId": appId,
         "meshPrompt": prompt,
         "paintPromptPos": prompt
     }
 
     if category == "Human":
         payloadinfo["animationType"] = "animate"
-        payloadinfo["animationPrompt"] = "walking"
+        payloadinfo["animationPrompt"] = data["animationPrompt"]
 
     headers = {
-        'x-appId': appId,
         'Content-Type': 'application/json',
-        'x-apiKey': apiKey
+        'x-apikey': apiKey
     }
 
     gen_url = mpx_host + generate_dir[category]
@@ -63,8 +61,7 @@ def submit():
 def check_status():
     global currentRequestId
     headers = {
-        'x-appId': appId,
-        'x-apiKey': apiKey
+        'x-apikey': apiKey
     }
 
     response = requests.get(get_status_url + currentRequestId, headers=headers)

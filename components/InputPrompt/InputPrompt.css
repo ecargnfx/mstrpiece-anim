@@ -1,0 +1,70 @@
+.input-prompt-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* transform: translateX(-50%); */
+  z-index: 1000;
+  width: 500px;
+  background-color: rgba(205, 205, 205, 0.25);
+  padding: 0 10px 10px 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.tab {
+  padding: 10px;
+  background-color: (255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: white;
+}
+
+.tab img {
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+}
+
+.textfield {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.textfield input {
+  flex: 1;
+  padding: 5px 5px 5px 80px;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.textfield img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  height: 20px;
+}
+
+.textfield img:first-child {
+  left: 10px; /* Adjust as needed */
+}
+
+.textfield img:nth-child(2) {
+  left: 40px; /* Adjust as needed */
+}
+
+.textfield img:nth-child(4) {
+  right: 35px; /* Adjust as needed */
+}
+
+.textfield img:last-child {
+  right: 10px; /* Adjust as needed */
+}
