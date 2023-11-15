@@ -83,20 +83,24 @@ const InputPrompt: React.FC<InputPromptProps> = ({ status, setStatus, outputUrl,
     <div>
       <div id="input-prompt-container">
         <h2 className="text-2xl font-semibold">What do you want to create?</h2>
-        <div className="category-container">
-          <label>
-            <input type="radio" name="category" value="Object" onChange={() => setCategory('Object')} />
-            Object
+        <div className="category-container flex">
+          <label className="icon-container relative cursor-pointer">
+            <input type="radio" name="category" value="Object" className="opacity-0 absolute" onChange={() => setCategory('Object')} />
+            <img src="/icons/icon-object.png" alt="Object" className="w-12 h-12 border border-black rounded-sm" />
+            <span className="block text-center">Object</span>
           </label>
-          <label>
-            <input type="radio" name="category" value="Animal" onChange={() => setCategory('Animal')} />
-            Animal
+          <label className="icon-container relative cursor-pointer">
+            <input type="radio" name="category" value="Animal" className="opacity-0 absolute" onChange={() => setCategory('Animal')} />
+            <img src="/icons/icon-animal.png" alt="Animal" className="w-12 h-12 border border-black rounded-sm" />
+            <span className="block text-center">Animal</span>
           </label>
-          <label>
-            <input type="radio" name="category" value="Human" onChange={() => setCategory('Human')} />
-            Human
+          <label className="icon-container relative cursor-pointer">
+            <input type="radio" name="category" value="Human" className="opacity-0 absolute" onChange={() => setCategory('Human')} />
+            <img src="/icons/icon-animate.png" alt="Character" className="w-12 h-12 border border-black rounded-sm" />
+            <span className="block text-center">Character</span>
           </label>
         </div>
+
         <div>
           <input
             type="text"
