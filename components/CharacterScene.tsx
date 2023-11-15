@@ -2,6 +2,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useRef, useEffect } from "react";
 import { useGLTF, useAnimations, PerspectiveCamera, Environment } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
+import '../app/globals.css'; 
 
 interface CharacterProps {
     url: string;
@@ -34,17 +35,15 @@ interface CharacterSceneProps {
 
 const CharacterScene: React.FC<CharacterSceneProps> = ({ url = "/monk.glb" }) => {
  return (
-    <div style={{ width: '99vw', height: '99vh' }}>
-      <Canvas style={{ background: 'lightgray' }}>
-        <ambientLight />
-        <Suspense fallback={null}>
-          <Character url={url} position={[2, 0, 0]} rotation={[0, 5, 0]} /> {/* Default position */}
-          <Character url="/wuxia-female.glb" position={[-1, 0, 0]} rotation={[0, Math.PI / 2, 0]} /> {/* Example position */}
-          <Environment background={true} path="/skybox/temple/" files={['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']} />
-        </Suspense>
-        <OrbitControls />
-    </Canvas>
-   </div> 
+    <Canvas className="w-full h-full bg-lightgray">
+      <ambientLight />
+      <Suspense fallback={null}>
+        <Character url={url} position={[2, 0, 0]} rotation={[0, 5, 0]} /> 
+        <Character url="/wuxia-female.glb" position={[-1, 0, 0]} rotation={[0, 90, 0]} /> 
+        <Environment background={true} path="/skybox/temple/" files={['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']} />
+      </Suspense>
+      <OrbitControls />
+  </Canvas>
  );
 };
 

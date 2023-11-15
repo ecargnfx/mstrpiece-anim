@@ -1,0 +1,45 @@
+/* InputPrompt.css */
+
+#input-prompt-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .category-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .status-textarea {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background-color: #bbb;
+  }
+  
+  .output-container {
+    width: 100%;
+    padding: 20px;
+    background-color: gray;
+    & ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+    & li {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+
+
+  
